@@ -34,10 +34,10 @@ const Home = () => {
             </div>
 
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              <Button size="lg" asChild>
                 <a href="/registration">Register Now</a>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button size="lg" variant="hero" asChild>
                 <a href="/about">Learn More</a>
               </Button>
             </div>

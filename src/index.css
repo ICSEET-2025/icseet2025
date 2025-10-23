@@ -40,7 +40,7 @@ All colors MUST be HSL.
 
     --header-bg: 0 0% 100%;
     --header-text: 220 15% 20%;
-    --nav-hover: 16 90% 95%;
+    --nav-hover: 16 10% 95%;
   }
 
   .dark {
