@@ -54,29 +54,49 @@ const Sponsors = () => {
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold mb-4">Sponsors & Partners</h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              ICSEET-2025 welcomes sponsors and partners who share our commitment to advancing 
-              sustainable energy and environmental technologies.
+              We gratefully acknowledge our sponsors who support ICSEET-2025 and share our commitment 
+              to advancing sustainable energy and environmental technologies.
             </p>
           </div>
 
-          <Card className="mb-12 bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20">
-            <CardContent className="pt-6 text-center">
-              <h2 className="text-2xl font-bold mb-4">Become a Sponsor</h2>
-              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                Partner with ICSEET-2025 to showcase your organization's commitment to sustainability 
-                and connect with leading researchers, academics, and industry professionals from around the world.
+          <Card className="mb-16 shadow-lg">
+            <CardHeader className="text-center pb-4">
+              <CardTitle className="text-3xl">Our Sponsors</CardTitle>
+              <p className="text-muted-foreground mt-2">
+                Thank you to our valued partners supporting ICSEET-2025
               </p>
-              <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
-                <a href="mailto:Icseet.2025@gmail.com">
-                  <Mail className="mr-2 h-4 w-4" />
-                  Contact Us for Sponsorship
-                </a>
-              </Button>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-8">
+                <div className="text-center py-6">
+                  <h3 className="text-xl font-semibold mb-8 text-primary">Research Supporters India</h3>
+                  <div className="flex flex-col items-center gap-8">
+                    <div className="w-64 h-auto bg-white p-6 rounded-lg shadow-sm">
+                      <img 
+                        src={sponsorLogo} 
+                        alt="Research Supporters India Logo"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <div className="w-full max-w-3xl">
+                      <img 
+                        src={sponsorImage} 
+                        alt="Research Supporters India Equipment"
+                        className="w-full h-auto rounded-lg shadow-lg"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </CardContent>
           </Card>
 
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-center mb-8">Sponsorship Opportunities</h2>
+            <h2 className="text-3xl font-bold text-center mb-4">Sponsorship Opportunities</h2>
+            <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Partner with ICSEET-2025 to showcase your organization and connect with leading researchers, 
+              academics, and industry professionals from around the world.
+            </p>
             <div className="grid md:grid-cols-3 gap-6">
               {sponsorshipTiers.map((tier, index) => (
                 <Card
@@ -153,41 +173,19 @@ const Sponsors = () => {
             </Card>
           </div>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Our Sponsors</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-8">
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold mb-4">Research Supporters India</h3>
-                  <div className="flex flex-col items-center gap-6">
-                    <div className="w-48 h-auto">
-                      <img 
-                        src={sponsorLogo} 
-                        alt="Research Supporters India Logo"
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <div className="w-full max-w-2xl">
-                      <img 
-                        src={sponsorImage} 
-                        alt="Research Supporters India Equipment"
-                        className="w-full h-auto rounded-lg shadow-md"
-                      />
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="text-center pt-6 border-t">
-                  <p className="text-muted-foreground mb-4">
-                    Interested in becoming a sponsor? Contact us for partnership opportunities!
-                  </p>
-                  <Button variant="outline" asChild>
-                    <a href="mailto:Icseet.2025@gmail.com">Become a Sponsor</a>
-                  </Button>
-                </div>
-              </div>
+          <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20">
+            <CardContent className="pt-6 text-center">
+              <h2 className="text-2xl font-bold mb-4">Become a Sponsor</h2>
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                Interested in becoming a sponsor? Contact us to explore partnership opportunities 
+                and discuss how we can work together.
+              </p>
+              <Button size="lg" asChild>
+                <a href="mailto:Icseet.2025@gmail.com">
+                  <Mail className="mr-2 h-4 w-4" />
+                  Contact Us for Sponsorship
+                </a>
+              </Button>
             </CardContent>
           </Card>
         </div>
