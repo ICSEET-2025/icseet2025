@@ -137,13 +137,36 @@ const Registration = () => {
                         </Select>
                       </div>
 
-                      <Button type="submit" className="w-full">
-                        Proceed to Payment
+                      <div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
+                        <p className="text-sm font-semibold mb-2">Payment Instructions:</p>
+                        <ol className="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
+                          <li>Click "Proceed to Payment" to complete payment</li>
+                          <li>After successful payment, return here and enter your UTR number</li>
+                          <li>Submit the form for verification</li>
+                        </ol>
+                      </div>
+
+                      <Button type="button" className="w-full" asChild>
+                        <a href="https://www.reva.edu.in/payment" target="_blank" rel="noopener noreferrer">
+                          Proceed to Payment
+                        </a>
                       </Button>
 
-                      <p className="text-xs text-muted-foreground text-center">
-                        Payment gateway integration coming soon. You'll receive payment details via email.
-                      </p>
+                      <div>
+                        <Label htmlFor="utr">UTR Number (Fill after payment) *</Label>
+                        <Input 
+                          id="utr" 
+                          required 
+                          placeholder="Enter UTR/Transaction Reference Number" 
+                        />
+                        <p className="text-xs text-muted-foreground mt-1">
+                          Enter the UTR number from your payment receipt for verification
+                        </p>
+                      </div>
+
+                      <Button type="submit" className="w-full" variant="secondary">
+                        Submit Registration
+                      </Button>
                     </form>
                   </CardContent>
                 </Card>
@@ -177,22 +200,22 @@ const Registration = () => {
                           <Input id="authorEmail" type="email" required placeholder="author@example.com" />
                         </div>
 
-                        <div>
-                          <Label htmlFor="themeArea">Theme Area *</Label>
-                          <Select>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select theme area" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="renewable">Renewable Energy Systems</SelectItem>
-                              <SelectItem value="environmental">Environmental Technologies</SelectItem>
-                              <SelectItem value="manufacturing">Sustainable Manufacturing</SelectItem>
-                              <SelectItem value="water">Water & Waste Management</SelectItem>
-                              <SelectItem value="climate">Climate Change & Policy</SelectItem>
-                              <SelectItem value="efficiency">Energy Efficiency</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </div>
+                      <div>
+                        <Label htmlFor="themeArea">Theme Area *</Label>
+                        <Select required>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select theme area" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="renewable">Renewable Energy Systems</SelectItem>
+                            <SelectItem value="environmental">Environmental Technologies</SelectItem>
+                            <SelectItem value="manufacturing">Sustainable Manufacturing</SelectItem>
+                            <SelectItem value="water">Water & Waste Management</SelectItem>
+                            <SelectItem value="climate">Climate Change & Policy</SelectItem>
+                            <SelectItem value="efficiency">Energy Efficiency</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
 
                         <div>
                           <Label htmlFor="abstract">Abstract (Max 300 words) *</Label>
@@ -267,8 +290,10 @@ const Registration = () => {
                         <li>• Include 4-6 keywords</li>
                         <li>• Follow IEEE format for references</li>
                       </ul>
-                      <Button variant="outline" className="w-full mt-4" size="sm">
-                        Download Template
+                      <Button variant="outline" className="w-full mt-4" size="sm" asChild>
+                        <a href="/documents/Abstract_Template-ICSEE-2025.doc" download>
+                          Download Template
+                        </a>
                       </Button>
                     </CardContent>
                   </Card>

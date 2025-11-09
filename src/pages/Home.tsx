@@ -121,7 +121,9 @@ const Home = () => {
               <CardContent className="pt-6 text-center">
                 <Download className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Brochure</h3>
-                <Button variant="outline" size="sm" className="mt-2">Download</Button>
+                <Button variant="outline" size="sm" className="mt-2" asChild>
+                  <a href="/documents/Brochure-ICSEET-2025.docx" download>Download</a>
+                </Button>
               </CardContent>
             </Card>
 
@@ -129,7 +131,9 @@ const Home = () => {
               <CardContent className="pt-6 text-center">
                 <Download className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Call for Papers</h3>
-                <Button variant="outline" size="sm" className="mt-2">Download</Button>
+                <Button variant="outline" size="sm" className="mt-2" asChild>
+                  <a href="/theme">View Details</a>
+                </Button>
               </CardContent>
             </Card>
 
@@ -137,7 +141,9 @@ const Home = () => {
               <CardContent className="pt-6 text-center">
                 <Download className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Schedule</h3>
-                <Button variant="outline" size="sm" className="mt-2">Download</Button>
+                <Button variant="outline" size="sm" className="mt-2" asChild>
+                  <a href="/schedule">View Schedule</a>
+                </Button>
               </CardContent>
             </Card>
 
@@ -145,7 +151,9 @@ const Home = () => {
               <CardContent className="pt-6 text-center">
                 <Download className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Abstract Template</h3>
-                <Button variant="outline" size="sm" className="mt-2">Download</Button>
+                <Button variant="outline" size="sm" className="mt-2" asChild>
+                  <a href="/documents/Abstract_Template-ICSEE-2025.doc" download>Download</a>
+                </Button>
               </CardContent>
             </Card>
           </div>

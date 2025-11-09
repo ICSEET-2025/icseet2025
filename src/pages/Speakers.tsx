@@ -1,31 +1,57 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Linkedin } from "lucide-react";
+import { Mail } from "lucide-react";
+import prashanthMenezes from "@/assets/speakers/prashanth-menezes.jpg";
+import muhammedMusthafa from "@/assets/speakers/muhammed-musthafa.jpg";
+import subrataKundu from "@/assets/speakers/subrata-kundu.jpg";
+import rochanSinha from "@/assets/speakers/rochan-sinha.jpg";
+import vGanesh from "@/assets/speakers/v-ganesh.jpg";
 
 const Speakers = () => {
   const speakers = [
     {
-      name: "To be announced",
+      name: "Dr. Prashanth Menezes",
       title: "Keynote Speaker",
-      affiliation: "",
-      expertise: "Renewable Energy Systems",
+      affiliation: "Head of Department - Materials Chemistry for Catalysis, Helmholtz-Zentrum Berlin & Group Leader, Technische Universität Berlin",
+      expertise: "Materials Chemistry, Photo- and Electro-catalysis, Water Splitting, OER and ORR",
+      email: "prashanth.menezes@mailbox.tu-berlin.de",
+      image: prashanthMenezes,
+      bio: "Extensive expertise in Crystallization, Solid State, Structural and Inorganic Materials Chemistry with focus on development of novel functional materials for industrial applications."
     },
     {
-      name: "To be announced",
+      name: "Dr. Muhammed Musthafa",
       title: "Keynote Speaker",
-      affiliation: "",
-      expertise: "Environmental Technologies",
+      affiliation: "Professor, Department of Chemistry, IISER, Pune",
+      expertise: "Fuel Cell Electrocatalysis, Li-air Batteries, Electrochemical Spectroscopy",
+      email: "musthafa@iiserpune.ac.in",
+      image: muhammedMusthafa,
+      bio: "PhD from IISc Bangalore, explored bi-functional mechanisms in fuel cell electrocatalysis. Postdoctoral research at University of St. Andrews, UK on Li-air battery stability."
     },
     {
-      name: "To be announced",
+      name: "Dr. Subrata Kundu",
       title: "Invited Speaker",
-      affiliation: "",
-      expertise: "Sustainable Development",
+      affiliation: "Senior Principal Scientist, CSIR-Central Electrochemical Research Institute (CECRI), Karaikudi",
+      expertise: "Nanomaterials, Electrocatalysis, Energy Materials, Biosensors",
+      email: "skundu@cecri.res.in",
+      image: subrataKundu,
+      bio: "Distinguished senior scientist with PhD from IIT Kharagpur. Journal Associate Editor for Journal of Materials Chemistry A, Materials Advances & Scientific Reports. Top 2% of world scientists in energy materials."
     },
     {
-      name: "To be announced",
+      name: "Dr. Rochan Sinha",
       title: "Invited Speaker",
-      affiliation: "",
-      expertise: "Climate Change",
+      affiliation: "Co-founder and CTO, Newtrace, Bengaluru",
+      expertise: "Renewable Energy Storage, Solid-state Technologies, Novel Materials Development",
+      email: "rochan@newtrace.io",
+      image: rochanSinha,
+      bio: "J.N. Tata fellow with 9+ years of experience in development of novel materials for renewable energy storage and generation technologies."
+    },
+    {
+      name: "Dr. V. Ganesh",
+      title: "Invited Speaker",
+      affiliation: "Senior Principal Scientist & Professor, CSIR-CECRI, Karaikudi",
+      expertise: "Electroanalytical Chemistry, Electrocatalysis, Energy Conversion and Storage, Nanomaterials",
+      email: "vganesh.cecri@csir.res.in",
+      image: vGanesh,
+      bio: "PhD from Raman Research Institute, Bangalore. Over 130 publications in international journals. CSIR Young Scientist Award winner. Top 2% of world scientists in energy materials since 2020."
     },
   ];
 
@@ -41,32 +67,41 @@ const Speakers = () => {
             </p>
           </div>
 
-          <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-12 text-center">
-            <p className="text-lg font-semibold text-primary mb-2">Speaker announcements coming soon!</p>
-            <p className="text-muted-foreground">
-              We are currently finalizing our lineup of world-class speakers. Check back soon for updates.
-            </p>
-          </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             {speakers.map((speaker, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardContent className="pt-6">
-                  <div className="flex gap-4">
-                    <div className="h-24 w-24 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center flex-shrink-0">
-                      <span className="text-3xl font-bold text-primary">?</span>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <div className="w-32 h-32 rounded-lg overflow-hidden flex-shrink-0 mx-auto sm:mx-0">
+                      <img 
+                        src={speaker.image} 
+                        alt={speaker.name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div className="flex-1">
                       <h3 className="font-bold text-xl mb-1">{speaker.name}</h3>
                       <p className="text-primary font-semibold mb-2">{speaker.title}</p>
-                      {speaker.affiliation && (
-                        <p className="text-sm text-muted-foreground mb-2">{speaker.affiliation}</p>
-                      )}
-                      <p className="text-sm text-muted-foreground mb-3">
+                      <p className="text-sm text-muted-foreground mb-2">{speaker.affiliation}</p>
+                      <p className="text-sm text-muted-foreground mb-2">
                         <span className="font-semibold">Expertise:</span> {speaker.expertise}
                       </p>
+                      {speaker.email && (
+                        <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                          <Mail className="h-3 w-3" />
+                          <a href={`mailto:${speaker.email}`} className="hover:text-primary">
+                            {speaker.email}
+                          </a>
+                        </div>
+                      )}
                     </div>
                   </div>
+                  {speaker.bio && (
+                    <p className="text-sm text-muted-foreground mt-4 pt-4 border-t">
+                      {speaker.bio}
+                    </p>
+                  )}
                 </CardContent>
               </Card>
             ))}

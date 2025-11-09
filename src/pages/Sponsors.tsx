@@ -1,6 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Award, Star, Sparkles, Mail } from "lucide-react";
+import sponsorLogo from "@/assets/sponsor-logo.png";
+import sponsorImage from "@/assets/sponsor-image.jpg";
 
 const Sponsors = () => {
   const sponsorshipTiers = [
@@ -64,9 +66,11 @@ const Sponsors = () => {
                 Partner with ICSEET-2025 to showcase your organization's commitment to sustainability 
                 and connect with leading researchers, academics, and industry professionals from around the world.
               </p>
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
-                <Mail className="mr-2 h-4 w-4" />
-                Contact Us for Sponsorship
+              <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
+                <a href="mailto:Icseet.2025@gmail.com">
+                  <Mail className="mr-2 h-4 w-4" />
+                  Contact Us for Sponsorship
+                </a>
               </Button>
             </CardContent>
           </Card>
@@ -151,22 +155,37 @@ const Sponsors = () => {
 
           <Card>
             <CardHeader>
-              <CardTitle>Current Sponsors</CardTitle>
+              <CardTitle>Our Sponsors</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-center py-8">
-                <p className="text-muted-foreground mb-4">
-                  Sponsorship opportunities are now open. Be among the first to partner with ICSEET-2025!
-                </p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div
-                      key={i}
-                      className="aspect-video bg-muted rounded-lg flex items-center justify-center border border-border"
-                    >
-                      <span className="text-muted-foreground text-sm">Sponsor Logo</span>
+              <div className="space-y-8">
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold mb-4">Research Supporters India</h3>
+                  <div className="flex flex-col items-center gap-6">
+                    <div className="w-48 h-auto">
+                      <img 
+                        src={sponsorLogo} 
+                        alt="Research Supporters India Logo"
+                        className="w-full h-full object-contain"
+                      />
                     </div>
-                  ))}
+                    <div className="w-full max-w-2xl">
+                      <img 
+                        src={sponsorImage} 
+                        alt="Research Supporters India Equipment"
+                        className="w-full h-auto rounded-lg shadow-md"
+                      />
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="text-center pt-6 border-t">
+                  <p className="text-muted-foreground mb-4">
+                    Interested in becoming a sponsor? Contact us for partnership opportunities!
+                  </p>
+                  <Button variant="outline" asChild>
+                    <a href="mailto:Icseet.2025@gmail.com">Become a Sponsor</a>
+                  </Button>
                 </div>
               </div>
             </CardContent>
